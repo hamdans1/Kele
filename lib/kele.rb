@@ -1,9 +1,11 @@
 require 'rubygems'
 require 'httparty'
 require 'json'
+require_relative './roadmap'
 
 class Kele
     include HTTParty
+    include Roadmap
 
     def initialize(email, password)
         @options = {query: {email: email, password: password}}
